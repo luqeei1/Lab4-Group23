@@ -3,7 +3,7 @@ module RegisterFile #(
                 DATA_WIDTH = 32
 ) (
     input logic clk;
-    input logic [ADDRESS_WIDTH-1:0]  AD1,
+    input logic [ADDRESS_WIDTH-1:0]  AD1,  
     input logic [ADDRESS_WIDTH-1:0]  AD2,
     input logic [ADDRESS_WIDTH-1:0]  AD3,
     input logic WE3,
