@@ -1,4 +1,1 @@
-# Lab4-Group23
-Group23's Reduced RISCV Processor 
-
-A
+Top.sv is the top module in the task 3 heirachy. I'm not sure how instruction memory is loaded and accessed by word addresses though. I've taken the instruction code from the Lab4 slides on the lecture slides and put them in the instructions.mem file.
