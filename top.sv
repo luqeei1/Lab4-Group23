@@ -65,7 +65,7 @@ module top#(
     );
 
     controlUnit control_unit (
-        .op(instr),
+        .op(instr[6:0]),
         .PCSrc(PCSrc),
         .ALUControl(ALUctrl),
         .IMMSrc(ImmSrc),
