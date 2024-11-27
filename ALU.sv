@@ -9,12 +9,15 @@ module ALU #(
     output logic EQ
 );
 
-if (ALUctrl == 1'b0)
-    SUM <= ALUOp1 + ALUOp2;
-if (ALUctrl == 1'b1)
-    if (ALUop1 - ALUop2==[DATA_WIDTH{1'b0}])
-        EQ <= 1'b1;
-    else 
-        EQ <= 1'b0;
+always_comb begin
+    // Default values
+    ALUout = '0;
+    EQ = 1'b0;
+    
+    if (ALUctrl == 1'b0)
+        ALUout = ALUop1 + ALUop2;
+    else if (ALUctrl == 1'b1)
+        EQ = (ALUop1 - ALUop2) == {DATA_WIDTH{1'b0}};
+end
 
-endmodule 
+endmodule
