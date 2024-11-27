@@ -1,4 +1,4 @@
-module rom #(
+module instructionMemory #(
     parameter ADDRESS_WIDTH = 16,
               DATA_WIDTH = 32
 )(
