@@ -1,22 +1,24 @@
 module DataMemory #(
-    ADDRESS_WIDTH = 32
-    DATA_WIDTH = 32
+    parameter WIDTH = 32
+                
 
 
 )(
-    input logic wen,
-    input logic [ADDRESS_WIDTH-1:0] ALUout,
-    input logic [ADDRESS_WIDTH-1:0] WriteData,
-    output logic [ADDRESS_WIDTH-1:0] ReadData
+    input logic [1:0]            address_mode,
+    input logic [WIDTH-1:0]      A,
+    input logic [WIDTH-1:0]      WD,
+    input logic                  WE,
+    output logic [WIDTH-1:0]     RD
+    
 
 
 );
 
-logic [DATA_WIDTH - 1:0] ram_array [2**ADDRESS_WIDTH-1:0];
+    logic [7:0] ram_array [2**17:0];
 
 always_ff @(posedge clk) begin
     if (wen == 1'b1)
-        ram_array[ALUout] <= WriteData;
+        ram_array[ALUout] <= WriteData;    // CHANGE TO single byte addressing
     else
         ram_array[ALUout] <= ram_array[ALUout];
 
