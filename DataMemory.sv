@@ -14,11 +14,13 @@ module DataMemory #(
 
 logic [DATA_WIDTH - 1:0] ram_array [2**ADDRESS_WIDTH-1:0];
 
-always_ff @(posedge clk) begin
+always_ff @(posedge clk) 
+    begin
     if (wen == 1'b1)
         ram_array[ALUout] <= WriteData;
     else
         ram_array[ALUout] <= ram_array[ALUout];
+    end 
 
 
 assign ReadData = ram_array[ALUout];
