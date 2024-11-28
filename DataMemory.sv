@@ -14,7 +14,7 @@ module DataMemory #(
 
 );
 
-    logic [7:0] ram_array [2**17:0];
+    logic [7:0] ram_array [2**17 -1:0];
 
 always_ff @(posedge clk) 
     begin
