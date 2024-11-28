@@ -9,6 +9,7 @@ module ALU #(
     output logic EQ
 );
 
+//another trial of the old code
 if (ALUctrl == 1'b0)
     SUM <= ALUOp1 + ALUOp2;
 if (ALUctrl == 1'b1)
