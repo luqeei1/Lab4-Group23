@@ -9,8 +9,9 @@ module ALU #(
     output logic EQ
 );
 
+// trial to see how finished we are
 always_comb begin
-    // Default values
+    case
     ALUout = '0;
     EQ = 1'b0;
     
@@ -18,6 +19,7 @@ always_comb begin
         ALUout = ALUop1 + ALUop2;
     else if (ALUctrl == 1'b1)
         EQ = (ALUop1 - ALUop2) == {DATA_WIDTH{1'b0}};
+    endcase
 end
 
 endmodule
